@@ -410,7 +410,7 @@ class easy_install(Command):
             for spec in self.args:
                 self.easy_install(spec, not self.no_deps)
             if self.record:
-                outputs = self.outputs
+                outputs = sorted(self.outputs)
                 if self.root:  # strip any package prefix
                     root_len = len(self.root)
                     for counter in range(len(outputs)):
